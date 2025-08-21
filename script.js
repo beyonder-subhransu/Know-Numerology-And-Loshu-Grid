@@ -774,13 +774,31 @@ ${missingNumbersHTML}
   });
 
   // After user calculation, show the compatibility prompt and hide partner section
-  const numerologyForm = document.getElementById('numerologyForm');
-  numerologyForm.addEventListener('submit', function(e) {
-    // ...existing code...
-    document.getElementById('compatibilityPrompt').style.display = 'block';
-    document.getElementById('partnerSection').style.display = 'none';
-    document.getElementById('partnerResult').innerHTML = '';
-  });
+  // const numerologyForm = document.getElementById('numerologyForm');
+  // numerologyForm.addEventListener('submit', function(e) {
+  //   // ...existing code...
+  //   document.getElementById('compatibilityPrompt').style.display = 'block';
+  //   document.getElementById('partnerSection').style.display = 'none';
+  //   document.getElementById('partnerResult').innerHTML = '';
+  // });
+  // ...existing code...
+
+document.getElementById('numerologyForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // ...all your numerology calculation and result rendering code...
+
+  // Show the compatibility prompt and hide partner section/result
+  document.getElementById('compatibilityPrompt').style.display = 'block';
+  document.getElementById('partnerSection').style.display = 'none';
+  document.getElementById('partnerResult').innerHTML = '';
+
+  // --- ADD THESE LINES TO HIDE FORM AND SHOW RESULTS ---
+  document.getElementById('formSection').style.display = 'none';
+  document.getElementById('resultSection').style.display = 'block';
+});
+
+// ...existing code...
 
   // Show partner section when prompt button is clicked
   const showPartnerSectionBtn = document.getElementById('showPartnerSection');
